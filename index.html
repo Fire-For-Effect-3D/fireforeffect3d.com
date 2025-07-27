@@ -5,106 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fire For Effect Prints — Veteran-Owned Custom 3D Prints">
   <title>Fire For Effect Prints</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Arial Black', Gadget, sans-serif;
-      background: linear-gradient(#1e1e1e, #121212);
-      color: #f5f5f5;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top left, #3b0a75, #0b2a4a 60%, #000000);
+      color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
       text-align: center;
-      padding: 2rem;
+      background-attachment: fixed;
+    }
+
+    header {
+      width: 100%;
+      background: linear-gradient(to right, #f0c808, #ff512f);
+      padding: 2rem 1rem 4rem;
+      clip-path: ellipse(100% 60% at 50% 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      color: #000;
+      text-shadow: 2px 2px #ffffff22, 0 0 8px #fff, 0 0 20px #f0c808, 0 0 30px #ff512f;
+      animation: fadeInSlide 2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+      display: block;
     }
 
     .logo {
       max-width: 250px;
       width: 100%;
       height: auto;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      color: #f0c808;
-      margin: 0.5rem 0;
+      margin-top: -2rem;
+      margin-bottom: 1.5rem;
     }
 
     .tagline {
-      font-size: 1.2rem;
-      color: #ccc;
+      font-size: 1.4rem;
+      color: #ffcc70;
       margin-bottom: 2rem;
+      font-weight: 500;
     }
 
     .contact {
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(240, 200, 8, 0.3);
+      background-color: rgba(255, 255, 255, 0.07);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 200, 50, 0.3);
       max-width: 90%;
+      color: #ffffff;
     }
 
     .contact p {
       margin: 0.5rem 0;
-      font-size: 1rem;
+      font-size: 1.05rem;
       word-wrap: break-word;
+      color: #ffffff;
     }
 
     footer {
       margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #888;
+      font-size: 0.9rem;
+      color: #aaaaaa;
       text-align: center;
     }
 
     .badge {
       display: inline-block;
       margin-top: 1rem;
-      background: #2d3e2f;
-      color: #f0c808;
+      background: #ff512f;
+      color: #fff;
       padding: 0.5rem 1rem;
       border-radius: 20px;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
+      box-shadow: 0 0 10px #ff512f66;
+    }
+
+    @keyframes fadeInSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     a {
-      color: #f0c808;
-      text-decoration: none;
+      color: #ffffff !important;
+      text-decoration: underline;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .floating-buttons a {
-      background-color: #f0c808;
-      color: #1e1e1e;
-      padding: 0.7rem 1rem;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      text-align: center;
-    }
-
-    .floating-buttons a:hover {
-      background-color: #ffe44c;
+    a:hover {
+      color: #f0c808 !important;
+      text-shadow: 0 0 5px #f0c808;
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 1.6rem;
+      header h1 {
+        font-size: 2rem;
       }
 
       .tagline {
@@ -127,19 +140,27 @@
   </style>
 </head>
 <body>
-  <img class="logo" src="logo.png" alt="Fire For Effect Prints Logo" />
-  <h1>Fire For Effect Prints</h1>
-  <p class="tagline">Veteran-Owned Custom 3D Prints</p>
+  <header>
+    <h1>Fire For Effect Prints</h1>
+  </header>
+
+  <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4rem; margin-top: -1rem;">
+    <img class="logo" src="logo.png" alt="Fire For Effect Prints Logo" style="max-width: 200px; height: auto; margin: 0;" />
+    <div class="printer-animation" style="max-width: 200px;">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWRxYnE1anM2anZobmhmdGs2ank5djVzbzJ2NXB6enc1NTM1N24xZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l2JhwdnrGvfnoXrzi/giphy.gif" alt="3D Printer Animation" style="width: 100%; border-radius: 10px; box-shadow: 0 0 10px #000;" />
+    </div>
+  </div>
+
   <div class="badge">Veteran Owned</div>
+
   <div class="contact">
     <p>✉️ <a href="mailto:DaveNewman@fireforeffect3d.com">DaveNewman@fireforeeffect3d.com</a></p>
     <p>🌐 <a href="https://fireforeeffect3d.com">fireforeeffect3d.com</a></p>
-    <a href="FireForEffect_Updated.vcf" download>💾 Download vCard</a>
+    <a href="/mnt/data/FireForEffect_NoPhone.vcf" download>💾 Download vCard</a>
   </div>
-  <footer>&copy; 2025 Fire For Effect Prints. All rights reserved.</footer>
-  <div class="floating-buttons">
-    <a href="mailto:DaveNewman@fireforeeffect3d.com">✉️ Email Us</a>
-    <a href="FireForEffect_Updated.vcf" download>💾 Download vCard</a>
-  </div>
+
+  <footer>
+    &copy; 2025 Fire For Effect Prints. All rights reserved.
+  </footer>
 </body>
 </html>
