@@ -1,8 +1,8 @@
 BEGIN:VCARD
-VERSION:3.0
+VERSION:4.0
 FN:Dave Newman
 ORG:Fire For Effect 3D
 EMAIL:DaveNewman@fireforeffect3d.com
 URL:https://fireforeffect3d.com
-PHOTO;VALUE=URI:https://fireforeffect3d.com/logo.png
+PHOTO;MEDIATYPE=image/png:https://fireforeffect3d.com/logo.png
 END:VCARD
