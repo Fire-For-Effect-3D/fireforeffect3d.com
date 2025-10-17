@@ -1,0 +1,565 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'Ready-Made Terrain &amp; Dioramas',
+    description:
+      'Battle-tested tabletop terrain, diorama sets, and display bases that arrive assembled and paint-ready.',
+  },
+  {
+    title: 'Cosplay &amp; Prop Kits',
+    description:
+      'Pre-modeled helmets, armor plates, and prop replicas engineered for durability and easy finishing.',
+  },
+  {
+    title: 'Utility Gear &amp; Organization',
+    description:
+      'Range storage, tool organizers, and hobby helpers fabricated to keep your kit mission capable.',
+  },
+];
+
+const differentiators = [
+  'Veteran-owned with an eye for mission readiness and reliability.',
+  'Every print produced in premium PLA+ for strength, detail, and heat resilience.',
+  'Multi-color capability with up to four color changes per job for striking detail.',
+  'Assembly, support removal, and QA handled in-house for turnkey delivery.',
+  'Curated catalog ships fast today · Custom commissions launching soon.',
+];
+
+const gallery = [
+  {
+    title: 'Artillery Shell Pen Holder',
+    description: 'Keep your desk squared away with a veteran-inspired organizer.',
+    image:
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    title: 'Modular Terrain Tiles',
+    description: 'Locking PLA+ tiles painted and ready for tactical tabletop ops.',
+    image:
+      'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=900&q=80',
+  },
+  {
+    title: 'Cosplay Gauntlet Set',
+    description: 'Four-color print with hinged joints assembled and ready to finish.',
+    image:
+      'https://images.unsplash.com/photo-1615719413546-198b25453f55?auto=format&fit=crop&w=900&q=80',
+  },
+];
+---
+
+<Layout>
+  <main class="page">
+    <header class="hero">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <div class="badge">Veteran Owned &amp; Operated</div>
+          <h1>Fire For Effect 3D</h1>
+          <p>
+            Precision 3D printing inspired by the discipline of military service. Explore a curated arsenal of veteran-designed
+            prints built-to-order in durable PLA+—assembled, inspected, and ready for deployment.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#gallery">View the Gallery</a>
+            <a class="btn btn--ghost" href="/FireForEffectPrints.vcf" download>
+              Download Contact Card
+            </a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__logo-frame">
+            <img src="/logo.png" alt="Fire For Effect 3D logo" />
+          </div>
+          <p class="hero__caption">Curated PLA+ prints with a fire support mindset.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="services-heading">
+      <div class="section__inner">
+        <h2 id="services-heading">What We Print</h2>
+        <p class="section__lead">
+          Each piece comes from our predetermined catalog, printed exclusively in PLA+, with support removal and assembly
+          handled before it leaves the shop.
+        </p>
+        <div class="cards">
+          {services.map((service) => (
+            <article class="card">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contrast" aria-labelledby="differentiators-heading">
+      <div class="section__inner">
+        <h2 id="differentiators-heading">Why Teams Choose Fire For Effect</h2>
+        <ul class="list">
+          {differentiators.map((item) => (
+            <li>
+              <span class="list__icon" aria-hidden="true">⚙️</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-heading">
+      <div class="section__inner">
+        <div class="section__header">
+          <h2 id="gallery-heading">Gallery</h2>
+          <p>
+            Preview a few of the mission-ready prints available today. Tap through for high-resolution shots of the finish,
+            color loadouts, and assembled details.
+          </p>
+        </div>
+        <div class="gallery" id="gallery">
+          {gallery.map((item) => (
+            <a class="gallery__item" href={item.image} target="_blank" rel="noreferrer">
+              <figure>
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <figcaption>
+                  <strong>{item.title}</strong>
+                  <span>{item.description}</span>
+                </figcaption>
+              </figure>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="process-heading">
+      <div class="section__inner process">
+        <div>
+          <h2 id="process-heading">Mission-Ready Process</h2>
+          <p>
+            We treat every order like a coordinated fire mission: clear communication, attention to detail, and decisive
+            execution. Pick your design, choose your colors, and we handle the rest.
+          </p>
+        </div>
+        <ol class="timeline">
+          <li>
+            <strong>Select the Print</strong>
+            <span>Choose from the catalog of curated, battle-tested designs.</span>
+          </li>
+          <li>
+            <strong>Color Loadout</strong>
+            <span>Lock in up to four PLA+ color changes to match your mission profile.</span>
+          </li>
+          <li>
+            <strong>Print &amp; Assemble</strong>
+            <span>We print, remove supports, and assemble any multi-part kits in-house.</span>
+          </li>
+          <li>
+            <strong>Delivery</strong>
+            <span>Package, ship, or hand-off locally—ready for immediate deployment.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--cta" aria-labelledby="cta-heading">
+      <div class="section__inner">
+        <h2 id="cta-heading">Ready to fire for effect?</h2>
+        <p>
+          Browse the gallery, lock in your color loadout, and email the team for availability. Custom commissions are on the
+          horizon—follow along for launch intel.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="mailto:contact@fireforeffect3d.com">Check Availability</a>
+          <a class="btn btn--ghost" href="/FireForEffectPrints.vcf" download>
+            Save Our Info
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p>© {new Date().getFullYear()} Fire For Effect 3D. All rights reserved.</p>
+        <p>
+          Based in the USA · Veteran Owned · <a href="mailto:contact@fireforeffect3d.com">contact@fireforeffect3d.com</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .hero {
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .hero__grid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .hero__content h1 {
+    font-family: var(--ff-primary);
+    font-size: clamp(3rem, 8vw, 4.75rem);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .hero__content p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 32rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(90deg, rgba(255, 107, 53, 0.9), rgba(255, 107, 53, 0.3));
+    color: #0e141f;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero__actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    font-weight: 700;
+  }
+
+  .btn--primary {
+    background: var(--color-accent);
+    color: #0e141f;
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.35);
+  }
+
+  .btn--primary:hover,
+  .btn--primary:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.45);
+  }
+
+  .btn--ghost {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(255, 107, 53, 0.08);
+  }
+
+  .btn--ghost:hover,
+  .btn--ghost:focus-visible {
+    background: var(--color-accent);
+    color: #0e141f;
+    transform: translateY(-2px);
+  }
+
+  .hero__visual {
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  .hero__logo-frame {
+    background: linear-gradient(140deg, rgba(255, 107, 53, 0.25), rgba(63, 102, 255, 0.15));
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 24px 60px rgba(2, 10, 24, 0.7);
+  }
+
+  .hero__logo-frame img {
+    width: clamp(200px, 30vw, 260px);
+  }
+
+  .hero__caption {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-family: var(--ff-primary);
+    color: var(--color-text-muted);
+  }
+
+  .section {
+    padding: 1rem 1.5rem;
+  }
+
+  .section--contrast {
+    background: rgba(6, 12, 22, 0.75);
+    backdrop-filter: blur(10px);
+    border-block: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .section--cta {
+    padding: 3.5rem 1.5rem 4.5rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 107, 53, 0));
+  }
+
+  .section__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .section__inner > h2 {
+    font-family: var(--ff-primary);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.5rem;
+  }
+
+  .section__lead {
+    margin: -0.5rem 0 2rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 40rem;
+  }
+
+  .section__header {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section__header h2 {
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .section__header p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 40rem;
+  }
+
+  .gallery {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .gallery__item {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .gallery__item figure {
+    margin: 0;
+    display: grid;
+    gap: 0.9rem;
+    background: rgba(6, 12, 22, 0.85);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 18px 40px rgba(1, 6, 18, 0.55);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .gallery__item:hover figure,
+  .gallery__item:focus-visible figure {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px rgba(1, 6, 18, 0.7);
+  }
+
+  .gallery__item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .gallery__item figcaption {
+    padding: 1.2rem 1.4rem 1.6rem;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .gallery__item strong {
+    font-family: var(--ff-primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .gallery__item span {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.8rem;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(1, 6, 18, 0.55);
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .card h3 {
+    margin: 0;
+    font-family: var(--ff-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .card p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.3rem;
+    background: rgba(7, 12, 22, 0.9);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .list__icon {
+    font-size: 1.6rem;
+  }
+
+  .list span:last-child {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .process {
+    display: grid;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .process p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .timeline {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.8rem;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-accent), rgba(255, 107, 53, 0));
+    opacity: 0.5;
+  }
+
+  .timeline li {
+    margin-left: 1.8rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid transparent;
+    position: relative;
+  }
+
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 0.1rem;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 6px var(--color-accent-soft);
+  }
+
+  .timeline strong {
+    display: block;
+    font-family: var(--ff-primary);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline span {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .footer {
+    padding: 2.5rem 1.5rem 3rem;
+    background: rgba(4, 7, 13, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .footer__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    gap: 0.4rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .footer a {
+    color: var(--color-accent);
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding-top: 7.5rem;
+    }
+
+    .process {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
